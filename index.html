@@ -27,16 +27,16 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class ="navbar-nav ml-auto">
                 <li class="nav-item active float-right">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#"><span>Home</span></a>
                 </li>
                 <li class="nav-item float-right">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#about"><span>About</span></a>
                 </li>
                 <li class="nav-item float-right">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#projects"><span>Projects</span></a>
                 </li>
                 <li class="nav-item float-right">
-                    <a class="nav-link" href="">Contact</a>
+                    <a class="nav-link" href="#contact"><span>Contact</span></a>
                 </li>
             </ul>
         </div>
@@ -58,12 +58,12 @@
     <div class="container">
         <h2 id="about">About Me</h2>
         <div class="row">
-            <div class="col-md">
+            <div class="col-md-6">
                 <div class ="image-shadow">
-                    <img src="img/profile_crop.jpg" alt="Picture of Justin Hu" width="100%">
+                    <img id="profile-pic" src="img/profile_crop.jpg" alt="Picture of Justin Hu" width="100%">
                 </div>
             </div>
-            <div class="col-md">
+            <div id="bio" class="col-md-6">
                 <p>Hello! My name is Justin Hu, and I am a current student at the University 
                 of Southern California studying Computer Science. I recently decided to change 
                 to my major from pre-health studies after taking several computer classes and discovering 
@@ -77,12 +77,66 @@
                 and advocating against inequality in the United States. In the future, 
                 I hope to combine my interdisciplinary interests with my passion for technology 
                 to create innovative products. </p>
+                <a href="https://www.facebook.com/justinhu88" class="social-media">
+                    <i class="fab fa-facebook fa-3x" id="fb" alt="Facebook"></i>
+                </a>
+                <a href="https://github.com/justinyh" class="social-media">
+                    <i class="fab fa-github fa-3x" id="github" alt="Github"></i>
+                </a>
+                <a class="social-media" href="https://www.linkedin.com/in/justin-h-25523a121/" target="_blank">
+                    <i class="fab fa-linkedin fa-3x" id="linkedin" alt="Linkedin"></i>
+                </a>
+                <a class="social-media" href="http://instagram.com/justinhu88" target="_blank">
+                    <i id="ig" class="fab fa-instagram fa-3x"></i>
+                </a>
+                <a class="social-media" href="mailto:justinyh@usc.edu">
+                    <i id="email" class="far fa-envelope fa-3x"></i>
+                </a>
             </div>
         </div>
     </div>
     <!-- Portfolio using a slideshow-->
     <h2 id="projects">Projects</h2>
     <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="project-cell">
+                    <i class="fas fa-shopping-basket fa-6x d-block w-100" aria-hidden="true"></i>
+                    <h3>Online Shopping Simulator</h3>
+                    <p>
+                        Sample description!!
+                    </p>
+                </div>
+                <div class="project-cell">
+                    <i class="fas fa-shopping-basket fa-6x d-block w-100" aria-hidden="true"></i>
+                    <h3>Online Shopping Simulator</h3>
+                    <p>
+                        Sample description!!
+                    </p>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="project-cell">
+                    <i class="fas fa-shopping-basket fa-6x d-block w-100" aria-hidden="true"></i>
+                    <h3>Online Shopping Simulator</h3>
+                    <p>
+                        Sample description!!
+                    </p>
+                </div>
+                <div class="project-cell">
+                    <i class="fas fa-shopping-basket fa-6x d-block w-100" aria-hidden="true"></i>
+                    <h3>Online Shopping Simulator</h3>
+                    <p>
+                        Sample description!!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
@@ -108,17 +162,63 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
+        </div> -->
+    </div>
+    <div class="container-fluid" id="form-bg">
+        <h2 id="contact">Contact</h2>
+        <form>
+            <div id="table-wrap">
+                <table>
+                    <tr>
+                        <td><label for="input-name">Name</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="input-name" size="30" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="input-email">Email</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="input-name" size="30" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="input-message">Message</label></td>
+                    </tr>
+                    <tr>
+                        <td><textarea id="input-message" required rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" formaction="">Submit</button></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div id="footer-social">
+        <a href="https://www.facebook.com/justinhu88" class="social-media">
+            <i class="fab fa-facebook fa-2x" id="fb" alt="Facebook"></i>
+        </a>
+        <a href="https://github.com/justinyh" class="social-media">
+            <i class="fab fa-github fa-2x" id="github" alt="Github"></i>
+        </a>
+        <a class="social-media" href="https://www.linkedin.com/in/justin-h-25523a121/" target="_blank">
+            <i class="fab fa-linkedin fa-2x" id="linkedin" alt="Linkedin"></i>
+        </a>
+        <a class="social-media" href="http://instagram.com/justinhu88" target="_blank">
+            <i id="ig" class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a class="social-media" href="mailto:justinyh@usc.edu">
+            <i id="email" class="far fa-envelope fa-2x"></i>
+        </a>
         </div>
+        <div>
+        <span id="copyright">&copy; Justin Hu, 2019</span>
     </div>
+    </footer>
+ 
 
-    
-        <h2 id="Contact">Contact</h2>
-    <div>
-        
-    </div>
-    <div>
-
-    </div>
 
     
 
