@@ -5,12 +5,12 @@ a, a:hover {
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: #557A95;
+    color: #035E7B;
     font-size: 16px;
 }
 
 .navbar {
-    background-color: rgba(85, 122, 149, 1);
+    background-color: #035E7B;
     width: 100%;
 }
 .navbar-collapse{
@@ -58,6 +58,7 @@ body {
     font-size: 100px;
     font-weight: 600;
     margin-top: 150px;
+    color: #EFF1C5
 }
 .nav-item{
     font-family: 'Alegreya Sans', sans-serif;
@@ -88,7 +89,7 @@ h2 {
 #bg-block {
     width: 100%;
     height: 500px;
-    background-image: linear-gradient(rgb(85, 122, 149, 1), rgba(85, 122, 149, 0));
+    background-image: linear-gradient(#035E7B, rgba(85, 122, 149, 0));
     position: relative;
     text-align: center;
 
@@ -142,35 +143,26 @@ h2 {
     color: #1abe4b;
 }
 
+.project-container {
+    height: 400px;
+    width: 30%;
+    margin: auto;
+    background-color: #002E2C;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
 .project-cell {
     background-color: white;
-    border: 1px solid black;
+    margin: 5px;
+    height: 90%;
     text-align: center;
-    width: 75%;
-    margin: auto;
-    font-size: 20px;
-    font-weight: bold;
+    padding: 10px;
 }
 
-.carousel-caption {
-    color: inherit;
-    font-size: 2.3em;
-    bottom: 0px;
-}
-
-.carousel-item {
-    padding: 0 0 100px 0;
-    text-align: center;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-    filter: invert(100%);
-}
-
-.carousel-link:hover {
-    color: rgb(38, 78, 107);
-    box-shadow: 10px 0px 100px 100px black;
+.project-cell p {
+    font-size: 14px;
+    margin: 10px;
 }
 
 h3 {

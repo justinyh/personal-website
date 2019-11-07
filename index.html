@@ -6,8 +6,8 @@
     <title>Justin Hu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,700|Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Raleway:400,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/727f655f08.js"></script>
     <script src="js/script.js"></script>
@@ -17,9 +17,7 @@
     <!-- idea: scroll changes color to darker...-->
     <nav id="navigation" class="navbar navbar-dark navbar-expand-md" height="70px">
         <div height="20px" overflow="hidden">
-            <a id="name" class="navbar-brand" href="#">
-                <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="logo" height="30px"> justin hu.
-            </a>
+            <a id="name" href="#">justin hu.</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,19 +62,18 @@
                 </div>
             </div>
             <div id="bio" class="col-md-6">
-                <p>Hello! My name is Justin Hu, and I am a current student at the University 
+                <p>Hello! My name is Justin Hu, and I am a current junior at the University 
                 of Southern California studying Computer Science. I recently decided to change 
                 to my major from pre-health studies after taking several computer classes and discovering 
                 a passion and excitement that comes with using technology to create. </p>
 
-                <p>As of now, I have taken classes in Object Oriented Programming and Data Structures, where I have learned to code in C++.
-                This coming year, I will be taking classes in Discrete Methods, Software Development, Algorithms, and more.
-                I am excited to learn much more in the upcoming year and apply what I've learned to solve problems outside of the classroom.</p>
+                <p>I have taken classes in Object Oriented Programming and Data Structures, Discrete Methods, Software Development, and more.
+                I currently have experience coding in C++, Java, and HTML/CSS/JS.<br>
+                <b><a href="resume.pdf" target="_blank">Click here to check out my resume!</a></b></p>
 
-                <p>In my free time, I enjoy playing and listening to music, reading new books, 
-                and advocating against inequality in the United States. In the future, 
-                I hope to combine my interdisciplinary interests with my passion for technology 
-                to create innovative products. </p>
+                <p>In my free time, I enjoy playing the piano and the guitar, reading new books, 
+                and learning new skills. In the future, I hope to use my interdisciplinary interests and my technological skills to develop new solutions
+                to society's greatest problems. </p>
                 <a href="https://www.facebook.com/justinhu88" class="social-media">
                     <i class="fab fa-facebook fa-3x" id="fb" alt="Facebook"></i>
                 </a>
@@ -99,7 +96,37 @@
     <h2 id="projects">Projects</h2>
     <div class="container">
         <div class="row">
-            Coming soon!
+            <div class="project-container">
+                <div class="project-cell">
+                    <h3>TaskBot for Slack</h3>
+                    <i class="fab fa-slack fa-3x"></i>
+                    <p>I was approached by a USC organization to develop a task manager for them. Since they were already using Slack, I decided to build
+                        a bot using Slack's API and Node.js on the backend. To store the task information, I used MongoDB to manage a NoSQL database. I also
+                        utilized the Express Framework to listen to requests sent by the Slack API.
+                    </p>
+                </div>
+            </div>
+            <div class="project-container">
+                <div class="project-cell">
+                    <h3>Command Line Spoons</h3>
+                    <i class="fas fa-utensil-spoon fa-3x"></i>
+                    <p>I created a basic game of spoons in C++ that is played on the command line. It uses Object-Oriented fundamentals in designing the cards and decks 
+                        used to play the game. It also utilizes multithreading and several timers to mimic opponents taking a spoon.
+                        <a href="#">Read the instructions and try it out here!</a>
+                    </p>
+                </div>
+            </div>
+            <div class="project-container">
+                <div class="project-cell">
+                    <h3>MusIC Website</h3>
+                    <i class="fab fa-react fa-3x"></i>
+                    <p>I am currently developing a website for an organization called Music Inspiring Community using React.js. The organization provides free
+                        music lessons for children in the LA area. The website will include forms  for prospective students and parents to sign up for the program. 
+                        It will also be updated regularly for parents to see what their children are learning. I plan to use Django to handle the forms.
+                         <a href="#">See my progress here!</a>
+                    </p>
+                </div>
+            </div>
             <!--
             <div class="col-md">
                 <div class="project-cell">
@@ -168,26 +195,26 @@
     </div>
     <div class="container-fluid" id="form-bg">
         <h2 id="contact">Contact</h2>
-        <form>
+        <form id="contact-form" action="https://formspree.io/mwkkkbln" method="POST">
             <div id="table-wrap">
                 <table>
                     <tr>
                         <td><label for="input-name">Name</label></td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="input-name" size="30" required></td>
+                        <td><input name="name" type="text" id="input-name" size="30" required></td>
                     </tr>
                     <tr>
                         <td><label for="input-email">Email</label></td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="input-name" size="30" required></td>
+                        <td><input name="_replyto"type="text" id="input-name" size="30" required></td>
                     </tr>
                     <tr>
                         <td><label for="input-message">Message</label></td>
                     </tr>
                     <tr>
-                        <td><textarea id="input-message" required rows="10"></textarea></td>
+                        <td><textarea form="contact-form" name="message"id="input-message" required rows="10"></textarea></td>
                     </tr>
                     <tr>
                         <td><button type="submit" formaction="">Submit</button></td>
