@@ -9,13 +9,35 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Raleway:400,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
     <script src="https://kit.fontawesome.com/727f655f08.js"></script>
     <script src="js/script.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#title-name").fadeIn(2000);
+        })
+        window.onscroll = function() {
+            var scroll = $(document).scrollTop();
+            var fadeIn = false;
+            if (scroll > 225) {
+                $("#name").fadeIn(500, function() {
+                    fadeIn = true;
+                });
+
+            }
+            else if (!fadeIn) {
+                $("#name").fadeOut(500, function() {
+                    fadeIn = false;
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <!----------------- NAV BAR ----------------------->
     <!-- idea: scroll changes color to darker...-->
-    <nav id="navigation" class="navbar navbar-dark navbar-expand-md" height="70px">
+    <nav id="navigation" class="navbar fixed-top navbar-expand-md">
         <div height="20px" overflow="hidden">
             <a id="name" href="#">justin hu.</a>
         </div>
@@ -94,10 +116,10 @@
     </div>
     <!-- Portfolio using a slideshow-->
     <h2 id="projects">Projects</h2>
-    <div class="container">
+    <div class="container-fluid projects">
         <div class="row">
-            <div class="project-container">
-                <div class="project-cell">
+            <div class="col-md-4">
+                <div class="project-container">
                     <h3>TaskBot for Slack</h3>
                     <i class="fab fa-slack fa-3x"></i>
                     <p>I was approached by a USC organization to develop a task manager for them. Since they were already using Slack, I decided to build
@@ -106,24 +128,24 @@
                     </p>
                 </div>
             </div>
-            <div class="project-container">
-                <div class="project-cell">
+            <div class="col-md-4">
+                <div class="project-container">
                     <h3>Command Line Spoons</h3>
                     <i class="fas fa-utensil-spoon fa-3x"></i>
                     <p>I created a basic game of spoons in C++ that is played on the command line. It uses Object-Oriented fundamentals in designing the cards and decks 
                         used to play the game. It also utilizes multithreading and several timers to mimic opponents taking a spoon.
-                        <a href="#">Read the instructions and try it out here!</a>
+                        <a target="_blank" href="https://github.com/justinyh/command-line-spoons"><i>Click here to read the instructions and try it out!</i></a>
                     </p>
                 </div>
             </div>
-            <div class="project-container">
-                <div class="project-cell">
+            <div class="col-md-4">
+                <div class="project-container">
                     <h3>MusIC Website</h3>
                     <i class="fab fa-react fa-3x"></i>
                     <p>I am currently developing a website for an organization called Music Inspiring Community using React.js. The organization provides free
                         music lessons for children in the LA area. The website will include forms  for prospective students and parents to sign up for the program. 
                         It will also be updated regularly for parents to see what their children are learning. I plan to use Django to handle the forms.
-                         <a href="#">See my progress here!</a>
+                        <a href="https://github.com/justinyh/usc-music-website" target="_blank"><i>Check out my progress here!</i></a>
                     </p>
                 </div>
             </div>
@@ -195,7 +217,7 @@
     </div>
     <div class="container-fluid" id="form-bg">
         <h2 id="contact">Contact</h2>
-        <form id="contact-form" name="contact-form" method="POST">
+        <form id="contact-form" name="contact-form" method="POST" target="_blank">
             <div id="table-wrap">
                 <table>
                     <tr>
@@ -252,7 +274,6 @@
     
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
