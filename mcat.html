@@ -65,16 +65,17 @@
             $("#question").html(q.question);
             console.log(q.choices);
             console.log(q.choices[0]);
-            let answers = ['<button class="answer">' + q.answer + "</button>", '<button class="q">' + q.choices[0] + "</button>", '<button class="q">' + q.choices[1] + "</button>", '<button class="q">' + q.choices[2] + "</button>"];
+            let answers = [q.answer, q.choices[0], q.choices[1], q.choices[2]];
             answers = shuffle(answers);
-            answers[0] += "a. ";
-            answers[1] += "b. ";
-            answers[2] += "c. ";
-            answers[3] += "d. ";
-            $("#answers").html(answers);
-            console.log(data);
-            console.log(data.length);
-            console.log(data[0]);
+            for (let i = 0; i < answers.length; i++) {
+                $("#a"+ i).append(answers[i]);
+                if (answers[i] == q.answer) {
+                    $("#a"+ i).addClass("answer");
+                }
+                else {
+                    $("#a"+ i).addClass("q");
+                }
+            }
         });
     </script>
 
@@ -88,7 +89,12 @@
     <h2>Question of the Day</h2>
     <div>
         <p id="question"></p>
-        <div id="answers"></div>
+        <div id="answers">
+            <button id="a1">a. </div>
+            <button id="a2">b. </div>
+            <button id="a3">c. </div>
+            <button id="a4">d. </div>
+        </div>
         <div id="result"></div>
     </div>
     <h2></h2>
