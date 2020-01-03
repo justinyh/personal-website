@@ -1,5 +1,12 @@
-{
-    "question": "What time is it?",
-    "answer": "2pm",
-    "choices": ["3pm", "4pm", "5pm"]
-}
+[
+    {
+        "question": "What time is it?",
+        "answer": "2pm",
+        "choices": ["3pm", "4pm", "5pm"]
+    },
+    {
+        "question": "What day is it?",
+        "answer": "6th",
+        "choices": ["8th", "9th", "10th"]
+    }
+]
