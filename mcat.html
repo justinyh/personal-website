@@ -55,7 +55,7 @@
             let qNum = Math.floor(Math.random() * data.length);
             let q = data[qNum];
             $("#question").html(q.question);
-            let answers = ['<p class="answer">' + q.answer + "</p>", "<p>" + q.answers[0] + "</p>", "<p>" + q.answers[1] + "</p>", "<p>" + q.answers[2] + "</p>"];
+            let answers = ['<p class="answer">' + q.answer + "</p>", "<p>" + q.choices[0] + "</p>", "<p>" + q.choices[1] + "</p>", "<p>" + q.choices[2] + "</p>"];
             answers = shuffle(answers);
             $("#answers").html(answers);
             console.log(data);
