@@ -37,12 +37,6 @@
         function incorrect() {
             $("#result").html("Incorrect! Try again!");
         }
-        var classname = document.getElementsByClassName("q");
-        console.log(classname.length);
-        for (var i = 0; i < classname.length; i++) {
-            classname[i].addEventListener('click', incorrect, false);
-            console.log("added listener");
-        }
     </script>
     <script>
         var shuffle = function (array) {
@@ -74,12 +68,12 @@
             let answers = [q.answer, q.choices[0], q.choices[1], q.choices[2]];
             answers = shuffle(answers);
             for (let i = 0; i < answers.length; i++) {
-                $("#a"+ (i+1)).append(answers[i]);
+                $("#a" + (i+1)).append(answers[i]);
                 if (answers[i] == q.answer) {
-                    $("#a"+ i).attr("onclick", "correct()");
+                    $("#a"+ (i+1)).attr("onclick", "correct()");
                 }
                 else {
-                    $("#a"+ i).addClass("q");
+                    $("#a"+ (i+1)).addClass("q");
                 }
             }
         });
@@ -108,5 +102,13 @@
     </div>
     <h2></h2>
     <h2>Inspiration to Study</h2>
+    <script>
+        var classname = document.getElementsByClassName("q");
+        console.log(classname.length);
+        for (var i = 0; i < classname.length; i++) {
+            classname[i].addEventListener('click', incorrect, false);
+            console.log("added listener");
+        }
+    </script>
 </body>
 </html>
