@@ -31,7 +31,33 @@
         }, 1000);
     </script>
     <script>
+        var shuffle = function (array) {
+
+            var currentIndex = array.length;
+            var temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+
+        };
         $.getJSON("questions.json", function( data ) {
+            let qNum = Math.floor(Math.random() * data.length);
+            let q = data[qNum];
+            $("#question").html(q.question);
+            let answers = ['<p class="answer">' + q.answer + "</p>", "<p>" + q.answers[0] + "</p>", "<p>" + q.answers[1] + "</p>", "<p>" + q.answers[2] + "</p>"];
+            answers = shuffle(answers);
+            $("#answers").html(answers);
             console.log(data);
             console.log(data.length);
             console.log(data[0]);
@@ -43,6 +69,7 @@
     <h1>IT'S TIME TO STUDY FOR THE MCAT!</h1>
     <h2>Time left until you ace the MCAT:
         <div id="countdown"></div>
+        <button>Show/Hide this annoying countdown.</button>
     </h2>
     <h2>Question of the Day</h2>
     <div>
