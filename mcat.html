@@ -76,6 +76,12 @@
                     $("#a"+ (i+1)).addClass("q");
                 }
             }
+            var classname = document.getElementsByClassName("q");
+            console.log(classname.length);
+            for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', incorrect, false);
+                console.log("added listener");
+            }
         });
         $("#countdown-button").click(function() {
             $("#countdown").toggle();
@@ -103,12 +109,7 @@
     <h2></h2>
     <h2>Inspiration to Study</h2>
     <script>
-        var classname = document.getElementsByClassName("q");
-        console.log(classname.length);
-        for (var i = 0; i < classname.length; i++) {
-            classname[i].addEventListener('click', incorrect, false);
-            console.log("added listener");
-        }
+        
     </script>
 </body>
 </html>
