@@ -38,8 +38,9 @@
             $("#result").html("Incorrect! Try again!");
         }
         var classname = document.getElementsByClassName("q");
+        console.log(classname.length);
         for (var i = 0; i < classname.length; i++) {
-            classname[i].addEventListener('click', incorrect(), false);
+            classname[i].addEventListener('click', incorrect, false);
             console.log("added listener");
         }
     </script>
@@ -73,7 +74,7 @@
             let answers = [q.answer, q.choices[0], q.choices[1], q.choices[2]];
             answers = shuffle(answers);
             for (let i = 0; i < answers.length; i++) {
-                $("#a"+ i+1).append(answers[i]);
+                $("#a"+ (i+1)).append(answers[i]);
                 if (answers[i] == q.answer) {
                     $("#a"+ i).attr("onclick", "correct()");
                 }
