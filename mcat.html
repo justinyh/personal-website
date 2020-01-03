@@ -37,10 +37,10 @@
         function incorrect() {
             $("#result").html("Incorrect! Try again!");
         }
-        var classname = document.getElementsByClassName("classname");
+        var classname = document.getElementsByClassName("q");
         for (var i = 0; i < classname.length; i++) {
             classname[i].addEventListener('click', incorrect(), false);
-            console.log("addedlistener");
+            console.log("added listener");
         }
     </script>
     <script>
@@ -72,8 +72,8 @@
             console.log(q.choices[0]);
             let answers = [q.answer, q.choices[0], q.choices[1], q.choices[2]];
             answers = shuffle(answers);
-            for (let i = 1; i <= answers.length; i++) {
-                $("#a"+ i).append(answers[i]);
+            for (let i = 0; i < answers.length; i++) {
+                $("#a"+ i+1).append(answers[i]);
                 if (answers[i] == q.answer) {
                     $("#a"+ i).attr("onclick", "correct()");
                 }
@@ -82,6 +82,9 @@
                 }
             }
         });
+        $("#countdown-button").click(function() {
+            $("#countdown").toggle();
+        });
     </script>
 
 </head>
@@ -89,7 +92,7 @@
     <h1>IT'S TIME TO STUDY FOR THE MCAT!</h1>
     <h2>Time left until you ace the MCAT:
         <div id="countdown"></div>
-        <button>Show/Hide this annoying countdown.</button>
+        <button id="countdown-button">Show/Hide this annoying countdown.</button>
     </h2>
     <h2>Question of the Day</h2>
     <div>
