@@ -31,6 +31,14 @@
         }, 1000);
     </script>
     <script>
+        document.getElementsByClassName("q").onclick = function() {
+            $("#result").html("Incorrect! Try again!");
+        };
+        document.getElementsByClassName("answer").onclick = function() {
+            $("#result").html("Correct!");
+        };
+    </script>
+    <script>
         var shuffle = function (array) {
 
             var currentIndex = array.length;
@@ -57,8 +65,12 @@
             $("#question").html(q.question);
             console.log(q.choices);
             console.log(q.choices[0]);
-            let answers = ['<p class="answer">' + q.answer + "</p>", "<p>" + q.choices[0] + "</p>", "<p>" + q.choices[1] + "</p>", "<p>" + q.choices[2] + "</p>"];
+            let answers = ['<button class="answer">' + q.answer + "</button>", '<button class="q">' + q.choices[0] + "</button>", '<button class="q">' + q.choices[1] + "</button>", '<button class="q">' + q.choices[2] + "</button>"];
             answers = shuffle(answers);
+            answers[0] += "a. ";
+            answers[1] += "b. ";
+            answers[2] += "c. ";
+            answers[3] += "d. ";
             $("#answers").html(answers);
             console.log(data);
             console.log(data.length);
@@ -77,6 +89,7 @@
     <div>
         <p id="question"></p>
         <div id="answers"></div>
+        <div id="result"></div>
     </div>
     <h2></h2>
     <h2>Inspiration to Study</h2>
