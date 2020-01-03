@@ -39,7 +39,8 @@
         }
         var classname = document.getElementsByClassName("classname");
         for (var i = 0; i < classname.length; i++) {
-            classname[i].addEventListener('click', incorrect, false);
+            classname[i].addEventListener('click', incorrect(), false);
+            console.log("addedlistener");
         }
     </script>
     <script>
@@ -71,10 +72,10 @@
             console.log(q.choices[0]);
             let answers = [q.answer, q.choices[0], q.choices[1], q.choices[2]];
             answers = shuffle(answers);
-            for (let i = 0; i < answers.length; i++) {
+            for (let i = 1; i <= answers.length; i++) {
                 $("#a"+ i).append(answers[i]);
                 if (answers[i] == q.answer) {
-                    $("#a"+ i).attr("onclick", "correct");
+                    $("#a"+ i).attr("onclick", "correct()");
                 }
                 else {
                     $("#a"+ i).addClass("q");
