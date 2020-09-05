@@ -11,12 +11,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
     <script src="https://kit.fontawesome.com/727f655f08.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-
         $(document).ready(function() {
+            console.log(Cookies.get('shown'));
+            if (!Cookies.get('update-modal')) {
+                console.log('opening modal');
+                Cookies.set('update-modal', '1', {expires: 5});
+                $('#updateModal').modal('show');
+            }
             $("#title-name").fadeIn(2000);
-        })
+        });
         window.onscroll = function() {
             var scroll = $(document).scrollTop();
             var fadeIn = false;
@@ -47,16 +53,22 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class ="navbar-nav ml-auto">
                 <li class="nav-item active float-right">
-                    <a class="nav-link" href="#"><span>Home</span></a>
+                    <a class="nav-link" href="index.html"><span>Home</span></a>
                 </li>
                 <li class="nav-item float-right">
-                    <a class="nav-link" href="#about"><span>About</span></a>
+                    <a class="nav-link" href="index.html#about"><span>About</span></a>
                 </li>
                 <li class="nav-item float-right">
-                        <a class="nav-link" href="#projects"><span>Projects</span></a>
+                        <a class="nav-link" href="index.html#projects"><span>Projects</span></a>
+                </li>
+                <li class="nav-item float-right">
+                    <a class="nav-link" href="blog.html"><span>Blog</span></a>
                 </li>
                 <li class="nav-item float-right">
                     <a class="nav-link" href="#contact"><span>Contact</span></a>
+                </li>
+                <li class="nav-item float-right">
+                    <a class="nav-link" onclick="$('#exampleModal').modal('show');"><span>Updates</span></a>
                 </li>
             </ul>
         </div>
@@ -75,6 +87,38 @@
         </div>
     </div>
     -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateModalLabel">Welcome - September 5th, 2020 Update</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    Welcome to my personal website, where you will get to witness the changes I make in real time. <strong>Every Saturday at 5pm Central Time,</strong> I will 
+                    deploy my latest updates right here. Additionally, I will save previous iterations of my website to keep track of my progress.
+                </div>
+                <div class="modal-section"><h6>What's New Since 2019</h6>
+                    <ul>
+                        <li>I now have my own domain: <strong>justinyh.com!</strong></li>
+                        <li>I have updated all the information to be current and up to date.</li>
+                    </ul>
+                </div>
+                <h6>What's Planned</h6>
+                <ul>
+                    <li>I am planning to transition this website from using Bootstrap to using React.</li>
+                    <li>Next week, I hope to release a bare bones version of this new React website.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
     <div class="container">
         <h2 id="about">About Me</h2>
         <div class="row">
@@ -84,13 +128,13 @@
                 </div>
             </div>
             <div id="bio" class="col-md-6">
-                <p>Hello! My name is Justin Hu, and I am a current junior at the University 
-                of Southern California studying Computer Science. I recently decided to change 
-                to my major from pre-health studies after taking several computer classes and discovering 
+                <p>Hello! My name is Justin Hu, and I am a current senior at the University 
+                of Southern California studying Computer Science. During my time at USC, I discovered 
                 a passion and excitement that comes with using technology to create. </p>
 
                 <p>I have taken classes in Object Oriented Programming and Data Structures, Discrete Methods, Software Development, and more.
-                I currently have experience coding in C++, Java, and HTML/CSS/JS.<br>
+                I currently have experience coding in C++, Java, HTML/CSS/JS, and Python. Some frameworks I have experience in are Aurelia, React,
+                Bootstrap, Express, Node.js, and more!<br>
                 <b><a href="resume.pdf" target="_blank">Click here to check out my resume!</a></b></p>
 
                 <p>In my free time, I enjoy playing the piano and the guitar, reading new books, 
@@ -120,11 +164,12 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="project-container">
-                    <h3>TaskBot for Slack</h3>
-                    <i class="fab fa-slack fa-3x"></i>
-                    <p>I was approached by a USC organization to develop a task manager for them. Since they were already using Slack, I decided to build
-                        a bot using Slack's API and Node.js on the backend. To store the task information, I used MongoDB to manage a NoSQL database. I also
-                        utilized the Express Framework to listen to requests sent by the Slack API.
+                    <h3>RelativityRuns</h3>
+                    <img height="60px"src="img/relativity.png"></img>
+                    <p>In the Summer of 2020, I was a Software Engineer Intern at Relativity, a company based out of Chicago that 
+                        produces e-Discovery software. During the first few weeks, I built an application called RelativityRuns that 
+                        tracks my runs and my progress. I used the Relativity Forms API as well as several external APIs like Strava and 
+                        MapBox in order to import running data and display my run routes on a map.
                     </p>
                 </div>
             </div>
@@ -140,12 +185,12 @@
             </div>
             <div class="col-md-4">
                 <div class="project-container">
-                    <h3>MusIC Website</h3>
+                    <h3>Type Away</h3>
                     <i class="fab fa-react fa-3x"></i>
-                    <p>I am currently developing a website for an organization called Music Inspiring Community using React.js. The organization provides free
-                        music lessons for children in the LA area. The website will include forms  for prospective students and parents to sign up for the program. 
-                        It will also be updated regularly for parents to see what their children are learning. I plan to use Django to handle the forms.
-                        <a href="https://github.com/justinyh/usc-music-website" target="_blank"><i>Check out my progress here!</i></a>
+                    <p>After a friend told me they needed to practice typing at fast speeds to get a job, I developed a game to help them practice! I created a server 
+                        and client to enable multiplayer competition. The server uses Express and Node.js, and is deployed as a Heroku app. The client uses React and 
+                        Material-UI components. 
+                        <a href="https://typeaway.justinyh.com" target="_blank"><i>Check out my progress here!</i></a>
                     </p>
                 </div>
             </div>
